@@ -1,0 +1,40 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="buscar()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Employee ID</mat-label>
+      <input matInput placeholder="1" formControlName="id">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" >
+        <mat-icon>search</mat-icon>
+        <span>Buscar</span>
+    </button>
+</form>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+     
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="employee_name">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="employee_salary">
+        <mat-header-cell *matHeaderCellDef> Salario </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_salary}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="employee_age">
+        <mat-header-cell *matHeaderCellDef> Edad </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_age}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="employee_anual_salary">
+        <mat-header-cell *matHeaderCellDef> Salario Anual </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_anual_salary}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>

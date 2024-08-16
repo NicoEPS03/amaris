@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class PruebaApplication extends SpringBootServletInitializer {
+public class PruebaApplication {
 	@Bean
 	public RestTemplate getresttemplate() {
 		return new RestTemplate();
@@ -17,8 +17,4 @@ public class PruebaApplication extends SpringBootServletInitializer {
 		SpringApplication.run(PruebaApplication.class, args);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(PruebaApplication.class);
-	}
 }

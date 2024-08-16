@@ -1,0 +1,39 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar" > 
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>  
+    
+      <h1 class="example-app-name">Prueba Amaris</h1>
+ 
+      <span class="example-spacer"></span>
+ 
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+ 
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="sidenav.opened = false">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+    </mat-menu>   
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 300px">
+ 
+        <img src="assets/amaris_logo.jpg" width="250px" style="margin-left: 20px">
+        <mat-divider></mat-divider> 
+        <button mat-menu-item  (click)="sidenav.toggle()" style="cursor: pointer" routerLink="/employee">
+          <mat-icon>person_apron</mat-icon>
+          <span>Empleados</span>
+        </button>
+        <mat-divider></mat-divider>  
+      
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>  
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
