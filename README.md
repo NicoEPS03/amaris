@@ -1,0 +1,1 @@
+El back se encuentra dentro de la carpeta prueba y al desplegarse se lanza sobre el puerto 8080 y el front se encuentra dentro de la carpeta front/pruebafront al momento de desplegar se debe utilizar el comando npm install para generar la carpeta node_modules
